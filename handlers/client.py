@@ -6,8 +6,8 @@ from create_bot import bot
 # from data_base import sqlite_db
 
 async def command_start(message: types.Message):
-    hello_message = f'Привет {message.from_user.id}. Начинаем игру!'
-    await message.answer(message.text, reply_markup=kb_client)
+    hello_message = f'Привет {message.from_user.first_name}. Начинаем игру!'
+    await message.answer(hello_message, reply_markup=kb_client)
     await sleep(1)
 
     bot_dice = await bot.send_dice(message.from_user.id)
